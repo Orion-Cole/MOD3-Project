@@ -1,3 +1,11 @@
-.App {
+/* .App {
+  
+  overflow: hidden;
+} */
+
+.page-wrapper {
   text-align: center;
+  box-sizing: border-box;
+  height: auto;
+  /* overflow: hidden; */
 }

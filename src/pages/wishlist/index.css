@@ -1,0 +1,35 @@
+#wishlist-page {
+    background-color: rgb(167, 196, 194);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 20px;
+    /* margin-top: -40px; */
+}
+
+    #wishlist-container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0px auto 0 auto;
+        padding: 0 0 30px 0;
+        border-radius: 25px;
+        color: white;
+        background-color: rgb(35, 12, 15);
+    }
+
+
+        .wishlisted-game-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+            .wishlisted-game {
+                margin: 0;
+            }
+
+            .removeGameButton {
+                width: fit-content;
+                margin: 0 auto 0 auto;
+            }

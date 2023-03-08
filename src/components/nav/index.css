@@ -1,0 +1,19 @@
+#nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(186, 31, 51);
+    box-shadow: inset -3px 0px 5px rgb(35, 12, 15), inset 3px 0px 5px rgb(35, 12, 15);
+    height: 45px;
+}
+
+    .nav-item { /*nav links and logout button*/
+        font-size: 30px;
+        color: black;
+        text-decoration: none;
+        padding: 0 7px 0 7px;
+        border-radius: 4px;
+    }
+
+        .nav-item:hover {
+            background-color: rgba(0, 0, 0, 0.194);
+        }

@@ -1,0 +1,94 @@
+#game-page {
+    background-color: rgb(167, 196, 194);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    /* overflow-y: scroll; */
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: 100px 1fr 1fr;
+    /* padding: 0 45px 0 45px; */
+    gap: 20px;
+}
+
+    #game-title {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    hr {
+        position: absolute;
+        top: 110px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-top: 2px solid black;
+        width: 1200px;
+    }
+
+    #game-pic {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        width: 90%;
+        max-height: 100%;
+        border-radius: 30px;
+        box-shadow: 0 10px 10px ;
+        margin-left: 40px;
+    }
+
+    #game-details {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+        #genre-list {
+            display: flex;
+            justify-content: center;
+        }
+
+            .genre-name {
+                margin: 0;
+            }
+
+        #description {
+            margin: 5px 50px 0 50px;
+        }
+
+        #fav-wish {
+            grid-column: 1 / span 1;
+            grid-row: 2 / span 2;
+            display: flex;
+            gap: 20px;
+            margin-left: 50px;
+        }
+
+            #fav-button {
+                cursor: pointer;
+                background-color: grey;
+                height: fit-content;
+                padding: 7px;
+                border-radius: 20px;
+            }
+
+                #fav-button:hover {
+                    color: darkgoldenrod;
+                }
+
+            #wish-button {
+                cursor: pointer;
+                background-color: grey;
+                height: fit-content;
+                padding: 7px;
+                border-radius: 20px;
+            }
+
+                #wish-button:hover {
+                    color: rgb(112, 184, 11);
+                }
+
+        #game-ratings {
+            grid-column: 2 / span 1;
+            grid-row: 3 / span 1;
+        }
+

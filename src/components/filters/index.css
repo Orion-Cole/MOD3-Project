@@ -1,0 +1,37 @@
+#filter-container {
+    background-color: rgb(186, 31, 51);
+    margin: 50px;
+    border-radius: 10px;
+    height: 600px;
+    font-size: 18px;
+}
+
+    #sort-form {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(147, 25, 41);
+    }
+
+        .flex-div {
+            display: flex;
+            
+            padding-left: 20%;
+        }
+
+            .sort-input {
+                cursor: pointer;
+            }
+
+            #filter-sort-button {
+                width: 70px;
+                margin: 10px auto 0 auto;
+                padding: 5px 0 5px 0;
+                cursor: pointer;
+                background-color: rgb(163, 192, 190);
+                border: 0;
+                border-radius: 10px;
+            }
+
+                #filter-sort-button:hover {
+                    background-color: rgb(114, 134, 133);
+                }
