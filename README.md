@@ -3,7 +3,7 @@
 
 ## Introduction: Per Scholas Module 3 Project - Game Browser
 
-### [App Homepage Image](src\images\app-screenshot.png)
+### [App Homepage Image](src/images/app-screenshot.png)
 
 ### The purpose of this project was to create a full CRUD app built with the following specifications:
 
