@@ -6,32 +6,110 @@
     font-size: 18px;
 }
 
-    #sort-form {
+    #search-bar-container {
         display: flex;
         flex-direction: column;
-        background-color: rgb(147, 25, 41);
     }
 
-        .flex-div {
-            display: flex;
-            
-            padding-left: 20%;
+        #search-title {
+            margin: 10px;
         }
 
-            .sort-input {
-                cursor: pointer;
+        #search-form {
+            display: flex;
+            justify-content: center;
+        }
+
+            #search-bar {
+                border: 1px solid rgb(35, 12, 15);   
+                box-shadow: 0 2px 3px rgb(35, 12, 15);     
             }
 
-            #filter-sort-button {
-                width: 70px;
-                margin: 10px auto 0 auto;
+            .search-button {
+                width: 50px;
+                margin: 0 0 0 6px;
                 padding: 5px 0 5px 0;
                 cursor: pointer;
                 background-color: rgb(163, 192, 190);
                 border: 0;
                 border-radius: 10px;
+                font-weight: bold;
+                box-shadow: 0 2px 3px rgb(35, 12, 15);  
+            }
+
+                .search-button:hover {
+                    background-color: rgb(114, 134, 133);
+                }
+
+                #clear {
+                    color: rgb(199, 0, 0);
+                    /* text-shadow: .5px 0 black,0 .5px black, -.5px 0 black, 0 -.5px black; */
+                }
+
+
+
+    #sort-form {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* background-color: rgb(147, 25, 41); */
+    }
+
+        #sort-title {
+            width: fit-content;
+            margin: 10px auto 10px 30px;
+        }
+
+        .radio-div {
+            display: flex;
+            padding: 3px;
+            margin: 0 0 5px 30px;
+            width: fit-content;
+            background-color: rgb(147, 25, 41);
+            border-radius: 10px;
+        }
+
+            .radio {
+                cursor: pointer;
+            }
+
+            .radio-label {
+                cursor: pointer;
+            }
+
+            #filter-sort-button {
+                width: 70px;
+                margin: 10px auto 0 30px;
+                padding: 5px 0 5px 0;
+                cursor: pointer;
+                background-color: rgb(163, 192, 190);
+                border: 0;
+                border-radius: 10px;
+                box-shadow: 0 2px 3px rgb(35, 12, 15);  
             }
 
                 #filter-sort-button:hover {
                     background-color: rgb(114, 134, 133);
                 }
+
+        .checkbox-div {
+            display: flex;
+            padding: 3px;
+            margin: 0 0 5px 30px;
+            width: fit-content;
+            background-color: rgb(147, 25, 41);
+            border-radius: 10px;
+        }
+
+            #tags-title {
+                width: fit-content;
+                margin: 10px auto 10px 30px;
+            }
+
+            .checkbox {
+                cursor: pointer;
+            }
+
+            .checkbox-label {
+                cursor: pointer;
+            }

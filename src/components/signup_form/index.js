@@ -8,7 +8,8 @@ export default class SignUpForm extends Component {
         email: '',
         password: '',
         confirm: '',
-        error: ''
+        error: '',
+        submitted: false
       };
       handleChange = (event) => {
         let propertyName = event.target.name;
@@ -20,6 +21,7 @@ export default class SignUpForm extends Component {
       handleSubmit = async (event) => {
         event.preventDefault(); // do not refresh the page
         console.log("submitting!");
+        this.setState({ submitted: true });
         // check if password has special character (error handling)
         let data = {...this.state};
         delete data.confirm;
@@ -32,14 +34,17 @@ export default class SignUpForm extends Component {
         // in a different file - we will bring in that function here
 
         //after user created auto logIn
+
         delete data.name;
         delete data.confirm;
         await logIn(data)
+        window.location.reload()
       }
 
 
   render() {
     const disable = this.state.password !== this.state.confirm;
+    const buttonText = this.state.submitted ? "SUBMITTED" : "SIGN UP";
     return (
       <div id='signup-container'>
           <form id='signup-form' autoComplete="off" onSubmit={this.handleSubmit}>
@@ -51,7 +56,7 @@ export default class SignUpForm extends Component {
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
             <label>Confirm</label>
             <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-            <button id='signup-form-button' type="submit" disabled={disable}>SIGN UP</button>
+            <button id='signup-form-button' type="submit" disabled={disable || this.state.submitted}>{buttonText}</button>
           </form>
         <p className="error-message">&nbsp;{this.state.error}</p>
       </div>

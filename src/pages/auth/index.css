@@ -43,8 +43,3 @@
     #login-button:hover {
         background-color: rgb(183, 165, 26);
     }
-
-    input {
-        background-color: rgb(255, 202, 202);
-        border: 1px solid black;
-    }

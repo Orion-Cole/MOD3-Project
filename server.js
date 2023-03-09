@@ -50,13 +50,11 @@ app.use(session({
 }))
 app.use(passport.session())
 
-
 app.get('/session-info', (req, res) => {
     res.json({
         session: req.session
     })
 })
-
 
 app.post('/users/signup',async (req, res) => {
     console.log(req.body);
@@ -102,7 +100,6 @@ app.put('/changePic', async (req, res) => {
        }
 })
 
-
 app.put('/users/login', async (req, res, next) => {
     console.log(req.body);
     // passport authentication
@@ -137,30 +134,34 @@ app.post('/users/logout', function(req, res, next) {
     });
   });
 
-  //res.json({ redirect: '/' });
-
-// app.post('/users/logout', (req, res, next) => {
-//     req.logout();
-//     res.status(200).send("Logged out successfully");
-//     req.session.destroy();
-//     res.redirect('/');
-// });
-
 //sort by ratings url
 //https://api.rawg.io/api/games?key=${process.env.API_KEY}&ordering=-rating&metacritic=80,100&exclude_additions=true
 app.get('/get_games', async (req, res) => {
-    let page = req.query.page;
-    let size = req.query.size;
-    let order = req.query.order;
-    //console.log({order});
-    let apiResponse = await axios(`https://api.rawg.io/api/games?key=${process.env.API_KEY}&page=${page}&page_size=${size}&ordering=${order}`)
-    let data = apiResponse.data;
-    res.json(data)
+    try {
+        let page = req.query.page;
+        let size = req.query.size;
+        let order = req.query.order;
+        let search = req.query.search;
+        let tags = req.query.tags; //&tags${tags}
+        console.log('TAGS', tags);
+        let tagQuery;
+            if (tags != '') {
+                tagQuery = `tags=${tags}`
+            }
+        let apiResponse = await axios(`https://api.rawg.io/api/games?key=${process.env.API_KEY}&page=${page}&page_size=${size}&ordering=${order}&search=${search}&${tagQuery}`)
+            if (!apiResponse.data.results.length) {
+                throw new Error('No data found');
+            }
+        let data = apiResponse.data;
+        res.json(data)
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Unable to fetch data' });
+    }
 })
 
 app.get('/get_game', async (req, res) => {
     let id = req.query.id;
-    //console.log('!!!!!!!!!!!!SHOULD BE ID OF GAME', id);
     let apiResponse = await axios(`https://api.rawg.io/api/games/${id}?key=${process.env.API_KEY}`)
     let data = apiResponse.data;
     console.log('!!!!!!!!!GAME DATA', data);
@@ -179,8 +180,6 @@ app.get('/get_wishlist', async (req, res) => {
 })
 
 app.get('/get_favs', async (req, res) => { 
-    //console.log('THIS IS USER',req.user);
-    //console.log('THIS IS THE USER: ',User.name);
     try {
         let user = await User.findOne({email: req.user.email});
         const favs = user.favorites;

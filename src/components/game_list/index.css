@@ -8,6 +8,10 @@
     overflow-y: scroll;
 }
 
+    #game-list::-webkit-scrollbar{
+        display: none;
+    }
+
 .game-list-item-container {
     display: flex;
     flex-direction: column;
@@ -15,7 +19,6 @@
     justify-content: space-between;
     background-color: rgb(167, 196, 194);
     height: 270px; /*keep same as grid-template-row height */
-    /* border: 3px black solid; */
     border-radius: 20px;
     cursor: pointer;
 } 

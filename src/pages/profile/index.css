@@ -23,6 +23,30 @@
             box-shadow: 0 4px 3px rgb(35, 12, 15);
         }
 
+            #url-button-submit {
+                width: 50px;
+                margin: 0 0 0 6px;
+                padding: 5px 0 5px 0;
+                cursor: pointer;
+                background-color: rgb(111, 131, 130);
+                border: 0;
+                border-radius: 10px;
+                font-weight: bold;
+                box-shadow: 0 2px 3px rgb(35, 12, 15);  
+            }
+
+            #url-button-change {
+                width: fit-content;
+                margin: 0 0 0 6px;
+                padding: 5px;
+                cursor: pointer;
+                background-color: rgb(111, 131, 130);
+                border: 0;
+                border-radius: 10px;
+                font-weight: bold;
+                box-shadow: 0 2px 3px rgb(35, 12, 15);  
+            }
+
     #user-data {
         display: flex;
         flex-direction: column;
@@ -60,5 +84,9 @@
             .removeGameButton {
                 width: fit-content;
                 margin: 0 auto 0 auto;
+                background-color: rgba(255, 0, 0, 0.712);
+                font-weight: bold;
+                border-radius: 10px;
+                cursor: pointer;
             }
    

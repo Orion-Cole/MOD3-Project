@@ -2,12 +2,9 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './index.css';
 
 const Profile = () => {
-
-    const navigate = useNavigate();
 
     const [url, setUrl] = useState('');
     const [displayedUrl, setDisplayedUrl] = useState()
@@ -15,8 +12,6 @@ const Profile = () => {
     const [email, setEmail] = useState('')
     const [favorites, setFavorites] = useState([])
     const [visable, setVisable] = useState(false)
-  
-    
 
     useEffect(() => {  //gets user data from db
       const getUserData = async () => {
@@ -62,10 +57,9 @@ const Profile = () => {
                 type="url"
                 value={url}
                 onChange={handleUrlChange}
-                // required
                 placeholder='URL for profile picture'
               />
-              <button type="submit">Submit</button>
+              <button id='url-button-submit' type="submit">Submit</button>
           </form>
         )
       }
@@ -111,12 +105,10 @@ const Profile = () => {
       })
     }
 
-
-
   return (
       <div id='profile-page'>
         <section id='image-section'>
-          <button onClick={toggleTextBoxVisibility}>Change Profile Picture</button>
+          <button id='url-button-change' onClick={toggleTextBoxVisibility}>Change Profile Picture</button>
           <img id='profile-pic' src={displayedUrl} alt='Image not found at URL'/>
           {displayForm()}
         </section>
