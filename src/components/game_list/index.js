@@ -28,7 +28,7 @@ const GameList = (props) => {
       doneFetching,
       setIsFetching,
       forceDonefetching
-    } = useLoadMoreOnScroll({ fetchSize: 20, scroller: scroller, limit: 1000 });
+    } = useLoadMoreOnScroll({ fetchSize: 20, scroller: scroller, limit: 10000 });
 
     const isMountedRef = useRef(false);
 
